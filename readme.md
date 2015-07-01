@@ -10,7 +10,7 @@ question.
 | Link |  |
 |---|---|
 | [Demo](http://mflo-spinning-numbers.surge.sh/demo.html) | For an interactive demo |
-| [Test](http://mflo-spinning-numbers.surge.sh/demo.html) | To run the unit tests |
+| [Test](http://mflo-spinning-numbers.surge.sh/test.html) | To run the unit tests |
 | [Docs](http://mflo.io/mflo-polymer-components/jsdoc/mflo-spinning-numbers/0.0.1/index.html) | For the generated JSDocs |
 | [Info](http://mflo.io/mflo-polymer-components/) | For more information on my Polymer components |
 
