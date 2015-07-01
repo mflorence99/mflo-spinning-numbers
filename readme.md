@@ -13,6 +13,7 @@ question.
 | [Test](http://mflo-spinning-numbers.surge.sh/test.html) | To run the unit tests |
 | [Docs](http://mflo.io/mflo-polymer-components/jsdoc/mflo-spinning-numbers/0.0.1/index.html) | For the generated JSDocs |
 | [Info](http://mflo.io/mflo-polymer-components/) | For more information on my Polymer components |
+| Install | ```bower install --save mflo-spinning-numbers``` |
 
 
 ## How to Use
