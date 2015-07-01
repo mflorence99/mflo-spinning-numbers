@@ -1,0 +1,175 @@
+<link rel="import" href="../polymer/polymer.html">
+<dom-module id="mflo-spinning-numbers">
+  <style>
+    @font-face {
+      font-family: "Segment7";
+      src: url("fonts/segment7.eot");
+      src: url("fonts/segment7.eot?#iefix") format("embedded-opentype"), url("fonts/segment7.woff") format("woff"), url("fonts/segment7.ttf") format("truetype"), url("fonts/segment7.svg#s") format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    #container {
+      padding: 2px;
+      text-align: right;
+    }
+    
+    #container > div {
+      display: inline-block;
+      height: 1em;
+      font-family: "Segment7";
+      line-height: 1em;
+      overflow: hidden;
+      vertical-align: middle;
+      width: 1em;
+    }
+    
+    #container > div > div {
+      display: inline-block;
+      position: relative;
+      visibility: hidden;
+    }
+    
+    #container > div > div.spin {
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+      -webkit-animation-fill-mode: none, forwards;
+      animation-fill-mode: none, forwards;
+      -webkit-animation-iteration-count: 3, 1;
+      animation-iteration-count: 3, 1;
+      -webkit-animation-name: mflo-spinning-numbers-spin, mflo-spinning-numbers-vis;
+      animation-name: mflo-spinning-numbers-spin, mflo-spinning-numbers-vis;
+    }
+    
+    #container > div > div.spin0 {
+      -webkit-animation-delay: 0ms;
+      animation-delay: 0ms;
+    }
+    
+    #container > div > div.spin1 {
+      -webkit-animation-delay: 100ms;
+      animation-delay: 100ms;
+    }
+    
+    #container > div > div.spin2 {
+      -webkit-animation-delay: 200ms;
+      animation-delay: 200ms;
+    }
+    
+    #container > div > div.spin3 {
+      -webkit-animation-delay: 300ms;
+      animation-delay: 300ms;
+    }
+    
+    #container > div > div.spin4 {
+      -webkit-animation-delay: 400ms;
+      animation-delay: 400ms;
+    }
+    
+    #container > div > div.spin5 {
+      -webkit-animation-delay: 500ms;
+      animation-delay: 500ms;
+    }
+    
+    #container > div > div.spin6 {
+      -webkit-animation-delay: 600ms;
+      animation-delay: 600ms;
+    }
+    
+    #container > div > div.spin7 {
+      -webkit-animation-delay: 700ms;
+      animation-delay: 700ms;
+    }
+    
+    #container > div > div.spin8 {
+      -webkit-animation-delay: 800ms;
+      animation-delay: 800ms;
+    }
+    
+    #container > div > div.spin9 {
+      -webkit-animation-delay: 1000ms;
+      animation-delay: 1000ms;
+    }
+    
+    @-webkit-keyframes mflo-spinning-numbers-spin {
+      0% {
+        top: 0em;
+      }
+      50% {
+        top: -5em;
+      }
+      100% {
+        top: -9em;
+      }
+    }
+    
+    @keyframes mflo-spinning-numbers-spin {
+      0% {
+        top: 0em;
+      }
+      50% {
+        top: -5em;
+      }
+      100% {
+        top: -9em;
+      }
+    }
+    
+    @-webkit-keyframes mflo-spinning-numbers-vis {
+      0% {
+        visibility: visible;
+      }
+      100% {
+        visibility: visible;
+      }
+    }
+    
+    @keyframes mflo-spinning-numbers-vis {
+      0% {
+        visibility: visible;
+      }
+      100% {
+        visibility: visible;
+      }
+    }
+  </style>
+  <template>
+    <div id="container">&nbsp;</div>
+  </template>
+  <script>
+    (function() {
+      "use strict";
+      Polymer({
+        is: "mflo-spinning-numbers",
+        properties: {
+          value: {
+            type: Number,
+            observer: "valueChanged"
+          }
+        },
+        valueChanged: function(value) {
+          Polymer.dom(this.$.container).innerHTML = "";
+          if (typeof value !== "undefined") {
+            var str = String(value).replace(/[\D]*/g, "");
+            var num = Number(str);
+            for (var i = 0; i < str.length; i++) {
+              var outer = document.createElement("div");
+              var inner = document.createElement("div");
+              var offset = Number(str.charAt(i));
+              var spinx = Math.min(9, Math.max(0, (str.length - 1) - i));
+              var style = "top: calc(-" + offset + "em + 1px);";
+              if (num === 0) style += " visibility: visible";
+              else Polymer.dom(inner).setAttribute("class", "spin spin" + spinx);
+              Polymer.dom(inner).setAttribute("style", style);
+              Polymer.dom(inner).innerHTML = "0 1 2 3 4 5 6 7 8 9";
+              Polymer.dom(outer).appendChild(inner);
+              Polymer.dom(this.$.container).appendChild(outer);
+            }
+            this.value = num;
+          }
+          else Polymer.dom(this.$.container).innerHTML = "&nbsp;";
+        }
+      });
+    }());
+  </script>
+</dom-module>

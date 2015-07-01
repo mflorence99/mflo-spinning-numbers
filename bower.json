@@ -1,0 +1,12 @@
+{
+  "name": "mflo-spinning-numbers",
+  "version": "0.0.1",
+  "description": "Calculator-like Display Animated with Spinning Numbers",
+  "license": "MIT",
+  "authors": [
+    "Mark Florence <mflo999@gmail.com>"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
