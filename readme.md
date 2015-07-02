@@ -1,6 +1,6 @@
-# Polymer Component: Calculator-like Display Animated with Spinning Numbers
+# Polymer Element: Calculator-like Display Animated with Spinning Numbers
 
-```mflo-spinning-numbers``` is a Polymer component that displays an integer number,
+```mflo-spinning-numbers``` is a Polymer element that displays an integer number,
 calculator-fashion and with a spinning animation effect as if the value
 represent was being calculated in the background. It was inspired by [Harry's]
 (http://stackoverflow.com/users/2606013/harry) excellent response to a recent
@@ -12,13 +12,13 @@ question.
 | [Demo](http://mflo-spinning-numbers.surge.sh/demo.html) | For an interactive demo |
 | [Test](http://mflo-spinning-numbers.surge.sh/test.html) | To run the unit tests |
 | [Docs](http://mflo.io/mflo-polymer-components/jsdoc/mflo-spinning-numbers/0.0.1/index.html) | For the generated JSDocs |
-| [Info](http://mflo.io/mflo-polymer-components/) | For more information on my Polymer components |
+| [Info](http://mflo.io/mflo-polymer-components/) | For more information on my Polymer elements |
 | Install | ```bower install --save mflo-spinning-numbers``` |
 
 
 ## How to Use
 
-The component contains a single, read/write ```value``` property which optionally can be set initially:
+The element contains a single, read/write ```value``` property which optionally can be set initially:
  
 ```html
   <mflo-spinning-numbers value="1234">
@@ -33,7 +33,7 @@ Additionally, ```value``` can be set programmatically:
 ```
 
 The animation effect is triggered whenever ```value``` is set. If no ```value``` is set initially, 
-the component displays as blank.
+the element displays as blank.
 
 
 ## How to Style
