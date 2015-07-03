@@ -15,11 +15,13 @@ question.
 | [Info](http://mflo.io/mflo-polymer-components/) | For more information on my Polymer elements |
 | <img src="http://mflo.io/public/bower.png" width="48"> | ```bower install --save mflo-spinning-numbers``` |
 
+> The demo and test pages are hosted by [surge](surge.sh). This is a great service I highly recommend you check out. The pages and associated code are automatically pushed to surge using its CLI during the build process. Awesome! 
+
 
 ## How to Use
 
 The element contains a single, read/write ```value``` property which optionally can be set initially:
- 
+
 ```html
   <mflo-spinning-numbers value="1234">
   </mflo-spinning-numbers>
@@ -32,7 +34,7 @@ Additionally, ```value``` can be set programmatically:
   spinner.value = 1234;
 ```
 
-The animation effect is triggered whenever ```value``` is set. If no ```value``` is set initially, 
+The animation effect is triggered whenever ```value``` is set. If no ```value``` is set initially,
 the element displays as blank.
 
 
