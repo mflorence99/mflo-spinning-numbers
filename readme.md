@@ -15,44 +15,40 @@ Link                                                                            
 The element contains a single, read/write `value` property which optionally can be set initially:
 
 ```html
-  <mflo-spinning-numbers value="1234">
-  </mflo-spinning-numbers>
+<mflo-spinning-numbers value="1234">
+</mflo-spinning-numbers>
 ```
 
 Additionally, `value` can be set programmatically:
 
 ```javascript
-  var spinner = document.querySelector("mflo-spinning-numbers#the-right-one");
-  spinner.value = 1234;
+var spinner = document.querySelector("mflo-spinning-numbers#the-right-one");
+spinner.value = 1234;
 ```
 
 The animation effect is triggered whenever `value` is set. If no `value` is set initially, the element displays as blank.
 
 ## How to Style
-> TODO: I'm using LESS to build the stylesheet and it chokes on the `@apply()` custom CSS mixin. So temporarily I am exposing stylable CSS properties individually.
-
-The options for styling are best shown by example. Here I style the numbers as green on a black background:
+Style `mflo-spinning-numbers` as required by defining `--mflo-spinning-numbers-theme` as show below. Here the numbers are styled as green on a black background:
 
 ```css
-  mflo-spinning-numbers {
-    --mflo-spinning-numbers-background-color: black;
-    --mflo-spinning-numbers-color: lightgreen;
-    --mflo-spinning-numbers-display: inline-block;
-    --mflo-spinning-numbers-font-size: 32px;
-    --mflo-spinning-numbers-min-width: 280px;
-  }
+mflo-spinning-numbers {
+  --mflo-spinning-numbers-theme: {
+    background-color: black;
+    color: lightgreen;
+    display: inline-block;
+    font-size: 32px;
+    min-width: 280px;
+  };
+}
 ```
 
-These are the default values:
+If you are styling `mflo-spinning-numbers` from the local DOM, be sure to use `custom-style` to enclose your CSS. A simple `<style>` tag will not work, as discussed in the Polymer documentation under [Custom element for document styling](https://www.polymer-project.org/1.0/docs/devguide/styling.html).
 
-```css
-  :host {
-    background-color: var(--mflo-spinning-numbers-background-color, white);
-    color: var(--mflo-spinning-numbers-color, black);
-    display: var(--mflo-spinning-numbers-display, block);
-    font-size: var(--mflo-spinning-numbers-font-size, 16px);
-    min-width: var(--mflo-spinning-numbers-min-width, 0);
-  }
+``` html
+<style is="custom-style">
+  mflo-spinning-numbers { ... }
+</style>
 ```
 
 ## Limitations

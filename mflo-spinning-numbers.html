@@ -10,11 +10,7 @@
     }
     
     :host {
-      background-color: var(--mflo-spinning-numbers-background-color, white);
-      color: var(--mflo-spinning-numbers-color, black);
-      display: var(--mflo-spinning-numbers-display, block);
-      font-size: var(--mflo-spinning-numbers-font-size, 16px);
-      min-width: var(--mflo-spinning-numbers-min-width, 0);
+      @apply(--mflo-spinning-numbers-theme);
     }
     
     #container {
@@ -39,8 +35,8 @@
     }
     
     #container > div > div.spin {
-      -webkit-animation-duration: 0.2s;
-      animation-duration: 0.2s;
+      -webkit-animation-duration: 200ms, 0ms;
+      animation-duration: 200ms, 0ms;
       -webkit-animation-fill-mode: none, forwards;
       animation-fill-mode: none, forwards;
       -webkit-animation-iteration-count: 3, 1;
@@ -124,18 +120,12 @@
     }
     
     @-webkit-keyframes mflo-spinning-numbers-vis {
-      0% {
-        visibility: visible;
-      }
       100% {
         visibility: visible;
       }
     }
     
     @keyframes mflo-spinning-numbers-vis {
-      0% {
-        visibility: visible;
-      }
       100% {
         visibility: visible;
       }
@@ -147,36 +137,38 @@
   <script>
     (function() {
       "use strict";
-      Polymer({
-        is: "mflo-spinning-numbers",
-        properties: {
-          value: {
-            type: Number,
-            observer: "valueChanged"
-          }
-        },
-        valueChanged: function(value) {
-          Polymer.dom(this.$.container).innerHTML = "";
-          if (typeof value !== "undefined") {
-            var str = String(value).replace(/[\D]*/g, "");
-            var num = Number(str);
-            for (var i = 0; i < str.length; i++) {
-              var outer = document.createElement("div");
-              var inner = document.createElement("div");
-              var offset = Number(str.charAt(i));
-              var spinx = Math.min(9, Math.max(0, (str.length - 1) - i));
-              var style = "top: -" + offset + "em";
-              Polymer.dom(inner).setAttribute("style", style);
-              Polymer.dom(inner).setAttribute("class", "spin spin" + spinx);
-              Polymer.dom(inner).innerHTML = "0 1 2 3 4 5 6 7 8 9";
-              Polymer.dom(outer).appendChild(inner);
-              Polymer.dom(this.$.container).appendChild(outer);
+      Polymer((function() {
+        return {
+          is: "mflo-spinning-numbers",
+          properties: {
+            value: {
+              type: Number,
+              observer: "_valueChanged"
             }
-            this.value = num;
+          },
+          _valueChanged: function(value) {
+            Polymer.dom(this.$.container).innerHTML = "";
+            if (typeof value !== "undefined") {
+              var str = String(value).replace(/[\D]*/g, "");
+              var num = Number(str);
+              for (var i = 0; i < str.length; i++) {
+                var outer = document.createElement("div");
+                var inner = document.createElement("div");
+                var offset = Number(str.charAt(i));
+                var spinx = Math.min(9, Math.max(0, (str.length - 1) - i));
+                var style = "top: calc(-" + offset + "em + 1px)";
+                Polymer.dom(inner).setAttribute("style", style);
+                Polymer.dom(inner).setAttribute("class", "spin spin" + spinx);
+                Polymer.dom(inner).innerHTML = "0 1 2 3 4 5 6 7 8 9";
+                Polymer.dom(outer).appendChild(inner);
+                Polymer.dom(this.$.container).appendChild(outer);
+              }
+              this.value = num;
+            }
+            else Polymer.dom(this.$.container).innerHTML = "&nbsp;";
           }
-          else Polymer.dom(this.$.container).innerHTML = "&nbsp;";
-        }
-      });
+        };
+      })());
     }());
   </script>
 </dom-module>
