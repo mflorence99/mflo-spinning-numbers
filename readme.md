@@ -1,13 +1,13 @@
 # Polymer Element: Calculator-like Display Animated with Spinning Numbers
 `mflo-spinning-numbers` is a Polymer element that displays an integer number, calculator-fashion and with a spinning animation effect as if the value represent was being calculated in the background. It was inspired by [Harry's] ([http://stackoverflow.com/users/2606013/harry](http://stackoverflow.com/users/2606013/harry)) excellent response to a recent [stack_overflow_](http://stackoverflow.com/questions/27956723/css-animation-number-increment-effect) question.
 
-Link                                                                                        |
-------------------------------------------------------------------------------------------- | ------------------------------------------------
-[Demo](http://mflo-spinning-numbers.surge.sh/demo.html)                                     | For an interactive demo
-[Test](http://mflo-spinning-numbers.surge.sh/test.html)                                     | To run the unit tests
-[Docs](http://mflo.io/mflo-polymer-components/jsdoc/mflo-spinning-numbers/0.0.1/index.html) | For the generated JSDocs
-[Info](http://mflo.io/mflo-polymer-components/)                                             | For more information on my Polymer elements
-<img src="http://mflo.io/public/screenshots/bower.png" width="48">                          | ```bower install --save mflo-spinning-numbers```
+Link |
+----- | ------------------------------------------------
+[Demo](http://mflo-spinning-numbers.surge.sh/demo.html) | For an interactive demo
+[Test](http://mflo-spinning-numbers.surge.sh/test.html) | To run the unit tests
+[Docs](http://mflo.io/mflo-polymer-components/jsdoc/mflo-spinning-numbers/0.0.3/index.html) | For the generated JSDocs
+[Info](http://mflo.io/mflo-polymer-components/) | For more information on my Polymer elements
+<img src="http://mflo.io/public/screenshots/bower.png" width="48"> | ```bower install --save mflo-spinning-numbers```
 
 > The demo and test pages are hosted by [surge](surge.sh). This is a great service I highly recommend you check out. The pages and associated code are automatically pushed to surge using its CLI during the build process. Awesome!
 
