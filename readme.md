@@ -1,7 +1,7 @@
 # Polymer Element: Calculator-like Display Animated with Spinning Numbers
 `mflo-spinning-numbers` is a Polymer element that displays an integer number, calculator-fashion and with a spinning animation effect as if the value represent was being calculated in the background. It was inspired by [Harry's] ([http://stackoverflow.com/users/2606013/harry](http://stackoverflow.com/users/2606013/harry)) excellent response to a recent [stack_overflow_](http://stackoverflow.com/questions/27956723/css-animation-number-increment-effect) question.
 
-Link |
+Link | |
 ----- | ------------------------------------------------
 [Demo](http://mflo-spinning-numbers.surge.sh/demo.html) | For an interactive demo
 [Test](http://mflo-spinning-numbers.surge.sh/test.html) | To run the unit tests
